@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Agency</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Pop-up form styles */
+        .popup-form {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        .popup-content {
+            background-color: #fff;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px; /* Could be more or less, depending on screen size */
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .popup-content input[type="text"],
+        .popup-content input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .popup-content input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .popup-content button {
+            background-color: #ff3366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .popup-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .popup-close:hover,
+        .popup-close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-section">
+            <h2 class="award-winning">AWARD WINNING</h2>
+            <h1 class="agency-title">DIGITAL MARKETING AGENCY</h1>
+            <p class="description">
+                Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit fringilla ac at purus. Morbi sed lacus nec risus finibus feugiat et fermentum.
+            </p>
+            <button class="contact-button" onclick="openPopup()">CONTACT US</button>
+        </div>
+        <div class="image-section">
+            <img src="hero.png" alt="Woman working" class="agency-image">
+        </div>
+    </div>
+
+    <div class="services-container">
+        <h2 class="section-title">WHAT WE DO</h2>
+        <h1 class="section-subtitle">SERVICES PROVIDE FOR YOU</h1>
+        <p class="section-description">
+            Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante at elit fringilla ac at purus. Morbi sed lacus nec risus finibus feugiat et fermentum.
+        </p>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="1.png" alt="Service 1" class="service-image">
+            </div>
+            <div class="service-item">
+                <img src="2.png" alt="Service 2" class="service-image">
+            </div>
+            <div class="service-item service-highlight">
+                <div class="service-content">
+                    <div class="icon">&#x1F4BB;</div>
+                    <h3 class="service-title">WEB DEVELOPMENT</h3>
+                    <p class="service-description">
+                        Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque
+                    </p>
+                    <a href="https://www.fylehq.com" class="read-more-button" target="_blank">READ MORE &#8594;</a>
+                </div>
+            </div>
+            <div class="service-item">
+                <img src="3@2x.png" alt="Service 4" class="service-image">
+            </div>
+        </div>
+        <div class="pagination">
+            <span class="pagination-dot active"></span>
+            <span class="pagination-dot"></span>
+            <span class="pagination-dot"></span>
+        </div>
+    </div>
+
+    <div class="why-choose-us-container">
+        <h2 class="why-choose-us-title">WHY CHOOSE US</h2>
+        <h1 class="why-choose-us-subtitle">WHY WE ARE BEST</h1>
+        <div class="features-grid">
+            <div class="feature-item">
+                <img src="1.2.png">
+                <h3 class="feature-title">Clarified Vision & Target</h3>
+                <p class="feature-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+            </div>
+            <div class="feature-item">
+                <img src ="2.2.png">
+                <h3 class="feature-title">High Performance</h3>
+                <p class="feature-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+            </div>
+            <div class="feature-item">
+                <img src = "3.3.png">
+                <h3 class="feature-title">Maintain Security</h3>
+                <p class="feature-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+            </div>
+            <div class="feature-item">
+                <img src = "4.png">
+                <h3 class="feature-title">Better Strategy & Quality</h3>
+                <p class="feature-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="our-project-container">
+    <h2 class="our-project-title">OUR PROJECT</h2>
+    <h1 class="our-project-subtitle">WHY WE ARE BEST</h1>
+    <div class="project-grid">
+        <div class="project-item">
+            <img id="project-image" src="image.png" alt="Project 1" class="project-image">
+        </div>
+        <div class="project-details">
+            <div class="project-highlight">
+                <h3 class="project-title">Genderless Kei - Japan's Hot</h3>
+                <p class="project-description">Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of</p>
+            </div>
+            <div class="project-highlight2">
+                <h3 class="project-title">Better Strategy & Quality</h3>
+                <p class="project-description">Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of</p>
+            </div>
+            <div class="project-highlight">
+                <h3 class="project-title">Genderless Kei - Japan's Hot</h3>
+                <p class="project-description">Set to launch on the manufacturer’s new A330neo aircraft in 2017, it’s offering lots of</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <div class="expert">
+        <h2 class="expert-title">EXPERTS GROWTH</h2>
+        <h1 class="company-growth-title">OUR COMPANY GROWTH</h1>
+        <div class="growth-stats">
+            <div class="growth-item">
+                <img src="heart (2).png" alt="Satisfied Customers">
+                <h1 class="growth-number">199+</h1>
+                <p class="growth-description">Satisfied Customers</p>
+            </div>
+            <div class="growth-item">
+                <img src="clock (3).png" alt="Days of Operation">
+                <h1 class="growth-number">1591+</h1>
+                <p class="growth-description">Days of Operation</p>
+            </div>
+            <div class="growth-item">
+                <img src="path 4402.png" alt="Complete Projects">
+                <h1 class="growth-number">283+</h1>
+                <p class="growth-description">Complete Projects</p>
+            </div>
+            <div class="growth-item">
+                <img src="path 4406.png" alt="Win Awards">
+                <h1 class="growth-number">75+</h1>
+                <p class="growth-description">Win Awards</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="client-feedback">
+        <h2 class="feedback-title">CLIENT'S FEEDBACK</h2>
+        <h1 class="feedback-subtitle">PEOPLE SAY'S ABOUT US!</h1>
+        <div class="feedback-content">
+            <p class="feedback-text">"Jannat Tumpa The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Bonorum et Malorum original."</p>
+            <p class="feedback-author">JANNAT TUMPA - COO, AMERIMAR ENTERPRISES, INC.</p>
+        </div>
+    </div>
+
+    <div class="logos-container">
+        <div class="logos-wrapper">
+            <img src="group 500.png" alt="Logo 1" class="logo">
+        </div>
+    </div>
+
+    <!-- Contact Us Pop-up Form -->
+    <div id="popupForm" class="popup-form">
+        <div class="popup-content">
+            <span class="popup-close" onclick="closePopup()">&times;</span>
+            <h2>Talk to us</h2>
+            <form action="https://getform.io/f/arolyoqb" method="POST">
+                <input type="email" name="email" placeholder="Work email*" required>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" name="first_name" placeholder="First name*" required>
+                    <input type="text" name="last_name" placeholder="Last name*" required>
+                </div>
+                <div style="text-align: left;">
+                    <input type="checkbox" name="consent" required> I agree to Fyle's terms and conditions, and provide consent to send me communication.
+                </div>
+                <button type="submit">Contact Us</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+            // Array of image URLs
+            const images = ["image.png", "image2.jpg", "image3.jpeg"];
+            let currentImageIndex = 0;
+        
+            // Function to change the image
+            function changeImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                document.getElementById("project-image").src = images[currentImageIndex];
+            }
+        
+            // Change image every 3 seconds (3000 milliseconds)
+            setInterval(changeImage, 3000);
+
+        function openPopup() {
+            document.getElementById("popupForm").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popupForm").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
